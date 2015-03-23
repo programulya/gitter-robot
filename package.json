@@ -1,0 +1,9 @@
+{
+    "name": "gitter-robot",
+    "version": "0.0.1",
+    "description": "Gitter robot for math expressions",
+    "main": "index.js",
+    "author": "programulya",
+    "license": "MIT"
+}
+
