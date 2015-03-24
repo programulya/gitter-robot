@@ -2,16 +2,18 @@
  * Created by programulya on 3/23/2015.
  */
 
+'use strict';
+
 var Gitter = require('node-gitter');
-var math = require('mathjs');
+var parser = require('./parser');
 var gitter = new Gitter('f5e5b956482e38436dd8d9870967e3d654198d2b');
 
 gitter.currentUser()
-    .then(function(user) {
-        console.log('You are logged in as:', user.username);
+    .then(function (user) {
+        console.log('Your login is:', user.username);
     });
 
-gitter.rooms.join('programulya/Aleph.js', function(error, room) {
+gitter.rooms.join('programulya/Aleph.js', function (error, room) {
     if (error) {
         console.log('Error during to joining the room: ', error);
         return;
@@ -19,20 +21,19 @@ gitter.rooms.join('programulya/Aleph.js', function(error, room) {
 
     console.log('Room: ', room.name);
 
-    room.send('calc 12 / (2.3 + 0.7)');
-
     var events = room.listen();
 
-    events.on('message', function(message) {
-        console.log(message.text.indexOf('calc'));
+    events.on('message', function (message) {
+        var startExp = 'calc ';
+        if (message.text.indexOf(startExp) >= 0) {
+            var exp = message.text.substring(startExp.length, message.text.length);
+            var result = parser.parse(exp);
 
-        if (message.text.indexOf('calc ') >= 0)
-        {
-            //math.eval(message.text.indexOf(5,));
-            console.log('Calc message:', message.text);
-        } else {
-            console.log('No calc message:');
+            if (result) {
+                room.send(exp + '=' + result.toFixed(4));
+            }
         }
     });
 });
+
 

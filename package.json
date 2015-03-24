@@ -7,5 +7,16 @@
   "license": "MIT",
   "dependencies": {
     "node-gitter": "~1.2.8"
-  }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/programulya/gitter-robot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/programulya/gitter-robot/issues"
+  },
+  "homepage": "https://github.com/programulya/gitter-robot"
 }
