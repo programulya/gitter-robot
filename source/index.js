@@ -6,8 +6,9 @@
 
 var Gitter = require('node-gitter');
 var parser = require('./parser');
-var gitter = new Gitter('f5e5b956482e38436dd8d9870967e3d654198d2b');
+var config = require('./../config');
 
+var gitter = new Gitter(config.token);
 gitter.currentUser()
     .then(function (user) {
         console.log('Your login is:', user.username);
