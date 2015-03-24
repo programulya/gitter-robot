@@ -27,7 +27,7 @@ gitter.rooms.join('programulya/Aleph.js', function (error, room) {
         var startExp = 'calc ';
         if (message.text.indexOf(startExp) >= 0) {
             var exp = message.text.substring(startExp.length, message.text.length);
-            var result = parser.parse(exp);
+            var result = parser.calc(exp);
 
             if (result) {
                 room.send(exp + '=' + result.toFixed(4));

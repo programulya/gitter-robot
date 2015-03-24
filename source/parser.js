@@ -4,7 +4,7 @@
 
 'use strict';
 
-module.exports.parse = function (exp) {
+module.exports.calc = function (exp) {
     var reg = /(?:[$_][0-9$_]*)|(?:[;={}\[\]"'!&<>^\\?:])/ig;
 
     exp = exp.replace(reg);
