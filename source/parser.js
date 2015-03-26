@@ -4,7 +4,7 @@
 
 'use strict';
 
-module.exports.calc = function (exp) {
+module.exports.calc = function(exp) {
     var reg = /(?:[$_][0-9$_]*)|(?:[;={}\[\]"'!&<>^\\?:])/ig;
 
     exp = exp.replace(reg);
@@ -12,6 +12,6 @@ module.exports.calc = function (exp) {
     try {
         return eval(exp);
     } catch (ex) {
-        console.log('Expression cannot be computed');
+        console.log('Expression cannot be computed: ' + exp);
     }
 };
