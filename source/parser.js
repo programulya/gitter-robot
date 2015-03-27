@@ -10,7 +10,7 @@ module.exports.calc = function(exp) {
     exp = exp.replace(reg);
 
     try {
-        return eval(exp);
+        return Number(eval(exp).toFixed(2));
     } catch (ex) {
         console.log('Expression cannot be computed: ' + exp);
     }

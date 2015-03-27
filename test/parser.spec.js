@@ -19,6 +19,10 @@ describe("addition operator", function() {
     it("should return result of adding two numbers with braces", function() {
         should(parser.calc("(1+2)")).equal(3);
     });
+
+    it("should return result of adding two numbers with dots", function() {
+        should(parser.calc("1.1+2")).equal(3.1);
+    });
 });
 
 describe("subtraction operator", function() {
@@ -28,6 +32,10 @@ describe("subtraction operator", function() {
 
     it("should return result of subtracting two numbers with braces", function() {
         should(parser.calc("(3-1)")).equal(2);
+    });
+
+    it("should return result of subtracting two numbers with dots", function() {
+        should(parser.calc("3.1-1")).equal(2.1);
     });
 });
 
@@ -39,6 +47,10 @@ describe("multiplication operator", function() {
     it("should return result of multiplication two numbers with braces", function() {
         should(parser.calc("(2*2)")).equal(4);
     });
+
+    it("should return result of multiplication two numbers with dots", function() {
+        should(parser.calc("2.1*2")).equal(4.2);
+    });
 });
 
 describe("division operator", function() {
@@ -48,6 +60,10 @@ describe("division operator", function() {
 
     it("should return result of division two numbers with braces", function() {
         should(parser.calc("(1/2)")).equal(0.5);
+    });
+
+    it("should return result of division two numbers with dots", function() {
+        should(parser.calc("1.1/2")).equal(0.55);
     });
 });
 
@@ -62,6 +78,14 @@ describe("correct expression", function() {
 
     it("should return result of expression with spaces", function() {
         should(parser.calc("1/2    + (5 + 4) * 5")).equal(45.5);
+    });
+
+    it("should return result of expression with dots", function() {
+        should(parser.calc("1/2 + (5.5 + 4.7) * 5.1")).equal(52.52);
+    });
+
+    it("should return result of expression with negatives", function() {
+        should(parser.calc("-1/2 + (-5.5 - 4.7) * 5.1")).equal(-52.52);
     });
 });
 
