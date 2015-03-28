@@ -88,6 +88,14 @@ describe("correct expression", function() {
         should(parser.calc("-1/2 + (-5.5 - 4.7) * 5.1")).equal(-52.52);
     });
 
+    it("should return result of expression with rounding", function() {
+        should(parser.calc("1+2/3")).equal(1.67);
+    });
+
+    it("should return result of expression with rounding (two zeros after comma)", function() {
+        should(parser.calc("1+2/45/78/78")).equal(1);
+    });
+
     it("should return result of one number (zero)", function() {
         should(parser.calc("0")).equal(0);
     });
