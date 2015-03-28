@@ -8,24 +8,28 @@ Gitter robot for math expressions including (),*,/,+,- in public gitter rooms.
 
 ## Installation
 
-1. Modify token use config.json
+1. Modify token in `config.json`
 2. Run with: `node source/index.js [roomId]`
 
 ## Examples
 
-1. Go to https://gitter.im/[roomId]
+1. Go to https://gitter.im/[roomId] (for example, programulya/gitter-robot)
 2. Put message `calc 1+2` in the room
 3. Gitter robot should answer `1+2=3`
 
-## Tests
+## Dependencies
 
-Covered by unit tests using:
+- node-gitter (1.2.8)
 - mocha (1.17.0)
 - should (3.0.1)
 
-## Contributors
+## Tests
 
-Programulya <julsavinkova@gmail.com>.
+Run unit tests with: `npm test`
+
+## Deploy
+
+Hosted on DigitalOcean using room `programulya/gitter-robot`
 
 ## License
 
