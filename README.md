@@ -17,6 +17,9 @@ Gitter robot for math expressions including (),*,/,+,- in public gitter rooms.
 2. Put message `calc 1+2` in the room
 3. Gitter robot should answer `1+2=3`
 
+Note! Gitter robot rounds result to 2 digits after comma. 
+For example, for message `1+2/3` answer will be `1.67`.
+
 ## Dependencies
 
 - node-gitter (1.2.8)
