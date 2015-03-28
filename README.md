@@ -13,7 +13,7 @@ Gitter robot for math expressions including (),*,/,+,- in public gitter rooms.
 
 ## Examples
 
-1. Go to https://gitter.im/[roomId] (for example, programulya/gitter-robot)
+1. Go to https://gitter.im/programulya/gitter-robot
 2. Put message `calc 1+2` in the room
 3. Gitter robot should answer `1+2=3`
 
