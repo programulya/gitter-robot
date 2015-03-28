@@ -32,7 +32,7 @@ chat.rooms.join(roomId, function(error, room) {
             var exp = message.text.substring(startExp.length, message.text.length);
             var result = parser.calc(exp);
 
-            if (result) {
+            if (result != undefined) {
                 room.send(exp + '=' + result);
             }
         }

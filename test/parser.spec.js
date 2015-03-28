@@ -87,6 +87,14 @@ describe("correct expression", function() {
     it("should return result of expression with negatives", function() {
         should(parser.calc("-1/2 + (-5.5 - 4.7) * 5.1")).equal(-52.52);
     });
+
+    it("should return result of one number (zero)", function() {
+        should(parser.calc("0")).equal(0);
+    });
+
+    it("should return result of one number (not zero)", function() {
+        should(parser.calc("18")).equal(18);
+    });
 });
 
 describe("incorrect expression", function() {
