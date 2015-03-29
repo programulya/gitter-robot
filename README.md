@@ -9,7 +9,8 @@ Gitter robot for math expressions including (),*,/,+,- in public gitter rooms.
 ## Installation
 
 1. Modify token in `config.json`
-2. Run with: `node source/index.js [roomId]`
+2. Install packages with `npm install`
+3. Run with `node source/index.js [roomId]`
 
 ## Examples
 
