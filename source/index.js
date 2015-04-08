@@ -29,7 +29,9 @@ chat.rooms.join(roomId, function(error, room) {
     events.on('message', function(message) {
         var startExp = 'calc ';
         if (message.text.indexOf(startExp) >= 0) {
-            var exp = message.text.substring(startExp.length, message.text.length);
+            var exp = message.text.substring(message.text.indexOf(startExp) + startExp.length, message.text.length);
+
+            console.log(exp);
             var result = parser.calc(exp);
 
             if (result != undefined) {
